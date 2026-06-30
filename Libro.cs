@@ -1,11 +1,17 @@
-﻿public class Libro
-{
-    public string ISBN { get; set; }
-    public string Titulo { get; set; }
-    public string Autor { get; set; }
-    public string Genero { get; set; }
-    public int CantidadCopias { get; set; }
+using System.ComponentModel.DataAnnotations;
 
-    public ICollection<Prestamo> Prestamos { get; set; }
-    public ICollection<Reserva> Reservas { get; set; }
+namespace Biblioteca_App
+{
+    public class Libro
+    {
+        [Key]
+        public string ISBN { get; set; } = string.Empty;
+        public string Titulo { get; set; } = string.Empty;
+        public string Autor { get; set; } = string.Empty;
+        public string Genero { get; set; } = string.Empty;
+        public int CantidadCopias { get; set; }
+
+        public ICollection<Prestamo> Prestamos { get; set; } = new List<Prestamo>();
+        public ICollection<Reserva> Reservas { get; set; } = new List<Reserva>();
+    }
 }
