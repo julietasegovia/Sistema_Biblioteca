@@ -16,7 +16,4 @@ public class Prestamo
     public EstadoPrestamo EstadoPrestamo { get; set; } = null!;
 
     public double MontoMulta { get; set; }
-
-    // Parte adicional (grupo de 3): un préstamo solo puede renovarse una vez.
-    public bool Renovado { get; set; }
 }
